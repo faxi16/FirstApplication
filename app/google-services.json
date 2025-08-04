@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "555849071583",
+    "project_id": "chatapp-2026e",
+    "storage_bucket": "chatapp-2026e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555849071583:android:d704a8dc42b635645ea26a",
+        "android_client_info": {
+          "package_name": "com.maherlabbad.myfirstapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHD-NO3jy03d6ZxeNGfALf8g-L0FkCCm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

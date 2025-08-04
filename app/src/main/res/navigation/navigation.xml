@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/calculater">
+
+    <fragment
+        android:id="@+id/calculater"
+        android:name="com.maherlabbad.myfirstapplication.Calculater"
+        android:label="fragment_calculater"
+        tools:layout="@layout/fragment_calculater" >
+        <action
+            android:id="@+id/action_calculater_to_chatApp"
+            app:destination="@id/chatApp" />
+        <action
+            android:id="@+id/action_calculater_to_chooseAnCode"
+            app:destination="@id/chooseAnCode" />
+        <argument
+            android:name="code"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatApp"
+        android:name="com.maherlabbad.myfirstapplication.chatApp"
+        android:label="fragment_chat_app"
+        tools:layout="@layout/fragment_chat_app" >
+        <action
+            android:id="@+id/action_chatApp_to_signup"
+            app:destination="@id/signup" />
+        <action
+            android:id="@+id/action_chatApp_to_chatting"
+            app:destination="@id/chatting" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.maherlabbad.myfirstapplication.Signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signup_to_chatApp"
+            app:destination="@id/chatApp" />
+        <action
+            android:id="@+id/action_signup_to_chatting"
+            app:destination="@id/chatting" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatting"
+        android:name="com.maherlabbad.myfirstapplication.Chatting"
+        android:label="fragment_chatting"
+        tools:layout="@layout/fragment_chatting" >
+        <action
+            android:id="@+id/action_chatting_to_chatApp"
+            app:destination="@id/chatApp" />
+        <action
+            android:id="@+id/action_chatting_to_add_user"
+            app:destination="@id/add_user" />
+        <action
+            android:id="@+id/action_chatting_to_chatScreen"
+            app:destination="@id/chatScreen" />
+        <action
+            android:id="@+id/action_chatting_to_calculater"
+            app:destination="@id/calculater" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_user"
+        android:name="com.maherlabbad.myfirstapplication.Add_user"
+        android:label="fragment_add_user"
+        tools:layout="@layout/fragment_add_user" >
+        <action
+            android:id="@+id/action_add_user_to_chatting"
+            app:destination="@id/chatting" />
+        <action
+            android:id="@+id/action_add_user_to_chatScreen"
+            app:destination="@id/chatScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatScreen"
+        android:name="com.maherlabbad.myfirstapplication.chatScreen"
+        android:label="fragment_chat_screen"
+        tools:layout="@layout/fragment_chat_screen" >
+        <action
+            android:id="@+id/action_chatScreen_to_chatting"
+            app:destination="@id/chatting" />
+        <argument
+            android:name="uid"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseAnCode"
+        android:name="com.maherlabbad.myfirstapplication.ChooseAnCode"
+        android:label="fragment_choose_an_code"
+        tools:layout="@layout/fragment_choose_an_code" >
+        <action
+            android:id="@+id/action_chooseAnCode_to_calculater"
+            app:destination="@id/calculater" />
+    </fragment>
+</navigation>

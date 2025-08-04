@@ -1,0 +1,82 @@
+plugins {
+
+    id 'com.google.gms.google-services'
+
+    alias(libs.plugins.android.application)
+}
+apply plugin: "androidx.navigation.safeargs"
+
+android {
+    namespace 'com.maherlabbad.myfirstapplication'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.maherlabbad.myfirstapplication"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+def nav_version = "2.8.9"
+def room_version = "2.7.1"
+dependencies {
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.core:core-ktx:1.15.0"
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation("androidx.room:room-rxjava3:2.7.1")
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.firebase.messaging
+    implementation libs.firebase.firestore
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation "io.reactivex.rxjava3:rxandroid:3.0.2"
+    implementation "io.reactivex.rxjava3:rxjava:3.1.8"
+    // Jetpack Compose Integration
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.google.firebase:firebase-auth:23.2.0'
+    implementation 'androidx.credentials:credentials:1.5.0'
+    implementation 'androidx.credentials:credentials-play-services-auth:1.5.0'
+    implementation 'com.google.android.libraries.identity.googleid:googleid:1.1.1'
+    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
+
+    // Views/Fragments Integration
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation platform('com.google.firebase:firebase-bom:33.13.0')
+    implementation 'com.google.firebase:firebase-messaging:24.1.1'
+    implementation 'com.google.firebase:firebase-firestore:25.1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+    // Feature module support for Fragments
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+}
